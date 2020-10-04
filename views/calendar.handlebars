@@ -1,0 +1,93 @@
+{{!-- From activity 13/9 --}}
+
+<h1>Calendar</h1>
+
+<ul>
+  {{#each Calendar}}
+  <li>
+    <p>
+      {{this.id}}. {{this.calendar}}
+
+      <button data-calid="{{this.id}}" class="delcal">Delete Availability!</button>
+    </p>
+  </li>
+  {{/each}}
+</ul>
+
+<h2>Create Availability</h2>
+<form id="createcal" class="button-size">
+  <textarea type="text" name="calend"></textarea>
+  <button type="submit">Save Availability!</button>
+</form>
+
+<h2>Update Availability</h2>
+<form id="updatecal" class="button-size">
+  <select name="id">
+		{{#each plans}}
+			<option value="{{this.id}}">{{this.calendar}}</option>
+		{{/each}}
+	</select>
+  <textarea type="text" name="plan" placeholder="plan"></textarea>
+  <button type="submit">Update Availability!</button>
+</form>
+
+<script type="text/javascript">
+  $(".delcal").on("click", function(event) {
+ 
+    var id = $(this).data("calid");
+
+    // Send the DELETE request.
+    $.ajax("/api/calendar/" + id, {
+      type: "DELETE"
+    }).then(
+      function() {
+        console.log("deleted id ", id);
+  
+        location.reload();
+      }
+    );
+  });
+
+  $("#createcal").on("submit", function(event) {
+
+    event.preventDefault();
+
+    var newAvalability = {
+      plan: $("#createcal [name=cal]").val().trim()
+    };
+
+    // Send the POST request.
+    $.ajax("/api/calendar", {
+      type: "POST",
+      data: newCal
+    }).then(
+      function() {
+        console.log("created new availability");
+      
+        location.reload();
+      }
+    );
+  });
+
+  $("#updatecal").on("submit", function(event) {
+   
+    event.preventDefault();
+
+    var id = $("[name=id]").val().trim();
+
+    var updatedCal = {
+      plan: $("#updatecal [name=cal]").val().trim()
+    };
+
+    $.ajax("/api/calendar/" + id, {
+      type: "PUT",
+      data: updatedCal
+    }).then(
+      function() {
+        console.log("updated id ", id);
+     
+        location.reload();
+      }
+    );
+  });
+</script>
