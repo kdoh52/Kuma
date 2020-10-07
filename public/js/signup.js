@@ -9,7 +9,18 @@ $(document).ready(() => {
             password: $("#password").val().trim()
         };
 
+        if (!newUser.email || !newUser.username || !newUser.password) {
+            return;
+        }
+
         console.log(newUser)
+
+        signupUser(newUser)
     });
 
+    function signupUser(newUser) {
+        $.post("/api/users", newUser)
+        .then()
+        .catch();
+    };
 });
