@@ -31,7 +31,11 @@ $(document).ready(() => {
         // let id = "";
         // console.log(id);
 
-        $.post("/api/profiles", getUser)
+        //$.post("/api/profiles/" + getUser.username, getUser)
+        $.post("/api/login", {
+        username: getUser.username,
+        password: getUser.password
+        })
         .then(function() {
             window.location.replace("/profile");
         })
