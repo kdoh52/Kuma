@@ -1,4 +1,4 @@
-<header>
+{{!-- <header>
     <div class="container-fluid heading">
         <h1>Kuma</h1> 
     </div>
@@ -10,11 +10,11 @@
         <a href="maps.html" class="navSpan">Map</a>
         <a href="contact.html" class="navSpan">Contact</a>
     </nav>
-</header>
+</header> --}}
 <main>
     <!--Bootstrap -->
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-        <header class="masthead mb-auto">
+        {{!-- <header class="masthead mb-auto">
           <div class="inner">
             <h3 class="masthead-brand">Kuma</h3>
             <nav class="nav nav-masthead justify-content-center">
@@ -23,26 +23,41 @@
               <a class="nav-link" href="#">Contact</a>
             </nav>
           </div>
-        </header>
+        </header> --}}
   
         <main role="main" class="inner cover">
-          <h1 class="cover-heading">Welcome</h1>
+          <h1 class="cover-heading">Welcome to Kuma</h1>
           <p class="lead">Here is a one stop shop for all your dog needs!</p>
-          <p class="lead">
-            <a href="#" class="btn btn-lg btn-secondary">Sign Up</a>
-          </p>
+          <h2 class="cover-heading">Sign Up</h2>
 
         <!--sign up-->
-        <form class="grid-x grid-margin-x"id="input-grid">
+        <form class="grid-x grid-margin-x" id="signupForm">
             <!-- select signup/signin -->
-            <select>
+            {{!-- <select>
                 <option>signup</option>
                 <option>signin</option>
-            </select>
+            </select> --}}
             <div class="cell medium-4">
-            <input id="user-input" class="form-input" type="text" size=""/>
+            <label for="email">Email</label>
+            <br>
+            <input id="email" class="form-input" type="text" size=""/>
+            <br>
+
+            <label for="username">Username</label>
+            <br>
+            <input id="username" class="form-input" type="text" size=""/>
+            <br>
+
+            <label for="password">Password</label>
+            <br>
+            <input id="password" class="form-input" type="text" size=""/>
+            <br>
+            <input type="submit" id="signupBtn" value="Sign up">
           </div>
         </form>
+        <p class="lead">Already have an account? 
+          <a href="#" class="btn btn-lg btn-secondary">Login</a>
+        </p>
     </div>
 </main>
   
@@ -65,3 +80,5 @@
 </footer>
 
 
+<script type="text/javascript" src="js/signup.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
