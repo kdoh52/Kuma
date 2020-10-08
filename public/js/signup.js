@@ -1,6 +1,6 @@
 $(document).ready(() => {
 
-    $("#signupForm").submit(function(event) {
+    $(".signup").submit(function(event){
         event.preventDefault();
 
         let newUser = {
@@ -9,18 +9,20 @@ $(document).ready(() => {
             password: $("#password").val().trim()
         };
 
-        if (!newUser.email || !newUser.username || !newUser.password) {
+        if(!newUser.email || !newUser.username || !newUser.password) {
             return;
         }
-
-        console.log(newUser)
-
-        signupUser(newUser)
+        console.log(newUser);
+        signupUser(newUser);
     });
 
     function signupUser(newUser) {
-        $.post("/api/users", newUser)
-        .then()
-        .catch();
+        $.post("/api/signup", newUser)
+        .then(()=>{
+            window.location.replace("/login");
+        })
+        .catch((err)=>{
+            console.log(err);
+        });
     };
 });

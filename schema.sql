@@ -1,3 +1,0 @@
-DROP DATABASE IF EXISTS kuma_db;
-
-CREATE DATABASE kuma_db;
