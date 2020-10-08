@@ -18,12 +18,12 @@ module.exports = (app)=>{
   });
 
   // Get route for retrieving a single profile
-  app.get("/api/profiles/:id", (req, res)=>{
+  app.post("/api/profiles/:username", (req, res)=>{
     // 2. Add a join here to include the Author who wrote the Profile
     db.Profile.findOne({
       include: [db.User],
       where: {
-        id: req.params.id
+        username: req.params.username
       }
     }).then((dbPost)=>{
       console.log(dbPost);

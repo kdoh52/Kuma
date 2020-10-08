@@ -20,8 +20,14 @@ module.exports = (app)=>{
         });
     });
     //Create new user
-    app.get("/api/users", (req, res)=>{
-        db.User.create(req.body)
+    app.post("/api/users", (req, res)=>{
+        //db.User.create(req.body)
+        db.User
+        .create({
+            email: req.body.email,
+            username: req.body.username,
+            password: req.body.password
+        })
         .then((dbUser)=>{
             res.json(dbUser);
         });

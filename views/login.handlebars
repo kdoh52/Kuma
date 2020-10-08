@@ -1,1 +1,78 @@
-<h1>Login</h1>
+{{!-- <header>
+    <div class="container-fluid heading">
+        <h1>Kuma</h1> 
+    </div>
+    <nav class="nav-bar nav">
+        <a href="signup.html" class="navSpan">Sign Up</a>
+        <a href="profile.html" class="navSpan">Profile</a>
+        <a href="community.html" class="navSpan">Community</a>
+        <a href="calendar.html" class="navSpan">Calendar</a>
+        <a href="maps.html" class="navSpan">Map</a>
+        <a href="contact.html" class="navSpan">Contact</a>
+    </nav>
+</header> --}}
+<main>
+    <!--Bootstrap -->
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        {{!-- <header class="masthead mb-auto">
+          <div class="inner">
+            <h3 class="masthead-brand">Kuma</h3>
+            <nav class="nav nav-masthead justify-content-center">
+              <a class="nav-link active" href="#">Sign In</a>
+              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="#">Contact</a>
+            </nav>
+          </div>
+        </header> --}}
+  
+        <main role="main" class="inner cover">
+          <h1 class="cover-heading">Welcome to Kuma</h1>
+          <p class="lead">Here is a one stop shop for all your dog needs!</p>
+
+        <!--sign up-->
+        <form class="grid-x grid-margin-x" id="loginForm">
+          <h2 class="cover-heading">Login</h2>
+            <!-- select signup/signin -->
+            {{!-- <select>
+                <option>signup</option>
+                <option>signin</option>
+            </select> --}}
+            <label for="username">Username</label>
+            <br>
+            <input id="username" class="form-input" type="text" size=""/>
+            <br>
+
+            <label for="password">Password</label>
+            <br>
+            <input id="password" class="form-input" type="text" size=""/>
+            <br>
+            <input type="submit" id="signupBtn" value="Login">
+          </div>
+        </form>
+        <p class="lead">New User? 
+          <a href="/signup" class="btn btn-lg btn-secondary">Sign Up</a>
+        </p>
+    </div>
+</main>
+  
+<footer class="mastfoot mt-auto">
+    <div class="inner">
+    <p>
+        <!-- collaborators -->
+        <a href="https://github.com/kdoh52" target="_blank">Kevin Doh</a>,
+        <a href="https://github.com/aliciagorton" target="_blank">Alicia Gorton</a>, and
+        <a href="https://github.com/davidlindnerjr" target="_blank">David Lindner</a>
+
+        <!-- repository -->
+        Link to our: <a href=>Project Repository</a>
+        <!-- copy right -->
+        <a href="https://jgthms.com"></a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">Trilogy</a>.
+        <p>Copyright © 2020 All Rights Reserved.</p>
+        </p>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="js/signup.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

@@ -12,3 +12,15 @@ h1 {
 .mastfoot {
     margin: 3%;
 }
+
+.lead {
+    text-align: center;
+}
+
+#signupForm {
+    margin: 10%;
+}
+
+#loginForm {
+    margin: 10%;
+}
