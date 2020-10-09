@@ -14,9 +14,8 @@ module.exports = (sequelize, DataTypes)=>{
                 len: [1]
             }
         },
-        profile_picture:{
-            type: DataTypes.BLOB,
-            allowNull: true,
+        img: {
+            type: DataTypes.BLOB
         }
     });
     //Relation to User model
