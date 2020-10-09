@@ -43,7 +43,8 @@ module.exports = (sequelize, DataTypes)=>{
       onDelete: "cascade"
     });
     User.hasOne(models.Profile, {
-      onDelete: "cascade"
+      onDelete: "cascade",
+      as: "Profile"
     });
   }
   return User;
