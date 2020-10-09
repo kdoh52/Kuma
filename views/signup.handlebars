@@ -1,37 +1,55 @@
+ {{!-- nav --}}
  <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
       </div>
     </div>
   </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Sign Up Form</h2>
-        <form class="signup">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="Email">
-          </div>
-           <div class="form-group">
-            <label for="exampleInputUsername1">Username</label>
-            <input class="form-control" id="username" placeholder="Username">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Password">
-          </div>
-          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span class="sr-only">Error:</span> <span class="msg"></span>
-          </div>
-          <button type="submit" class="btn btn-default">Sign Up</button>
-        </form>
-        <br />
-        <p>Or log in <a href="/login">here</a></p>
+
+{{!-- main body --}}
+<div class="container">
+  {{!-- start of form --}}
+    <div class="signup-form ">   
+      <form method="POST" class="signup-form" id="signup-form">
+        <h2 class="form-title">CREATE ACCOUNT</h2>
+        <div class="form-group">
+          <input type="email" class="form-control" name="Email" id="email" placeholder="Your Email"/>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="Username" id="username" placeholder="Create Username"/>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" name="Password" id="password" placeholder="Password"/>
+          <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" name="Re_password" id="re_password" placeholder="Repeat your password"/>
+        </div>
+        {{!-- terms & conditions --}}
+        <div class="form-group">
+          <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+          <label for="agree-term" class="label-agree-term">
+            <span><span></span></span>I agree all statements in  
+            <a href="#" class="term-service">Terms of service</a>
+          </label>
+        </div>
+        {{!-- Error --}}
+        <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span> <span class="msg"></span>
+        </div>
+        {{!-- button --}}
+        <div class="form-group">
+          <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
+        </div>
+      </form>
+      <p class="loginhere"> Have already an account ? 
+        <a href="#" class="loginhere-link">Login here</a>
+      </p>
       </div>
     </div>
   </div>
+
 <footer class="mastfoot mt-auto text-center">
     <div class="inner">
     <p>
