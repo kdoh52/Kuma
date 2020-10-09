@@ -10,10 +10,17 @@ module.exports = (app)=>{
   });
 
   app.get("/login", (req, res) => {
-    if(req.user) {
+    if(req.user){
       res.redirect("/profile");
     }
     res.render("login");
+  });
+
+  app.get("/profile-setup", (req, res)=>{
+    if(req.user){
+      res.redirect("/profile");
+    }
+    res.render("profile-setup");
   });
 
   app.get("/profile", isAuthenticated, (req, res) => {

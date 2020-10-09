@@ -19,7 +19,7 @@ $(document).ready(() => {
     function signupUser(newUser) {
         $.post("/api/signup", newUser)
         .then(()=>{
-            window.location.replace("/login");
+            window.location.replace("/profile-setup");
         })
         .catch((err)=>{
             console.log(err);
