@@ -1,6 +1,6 @@
 <h1>Set up your profile!</h1>
 
-<form>
+<form class="profileSetup">
     <label>Pet Name:</label>
     <input type="text" id="petName">
     <br>
@@ -19,6 +19,21 @@
     <br>
     <label>Personality:</label>
     <input type="text" id="petPersonality">
+    <br>
+    <label>Bio:</label>
+    <input type="text" id="petBio">
+    <br>
+    <label>Does your pet have a microchip?:</label>
+    <select id="petChip">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select>
+    <br>
+    <label>Vet Office:</label>
+    <input type="text" id="petVet">
+    <br>
+    <label for="img">Profile picture:</label>
+    <input type="file" id="petImg" name="img" accept="image/*">
     <br>
     <button class="submitPet" type="submit">Create Profile!</button>
 </form>
