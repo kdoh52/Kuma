@@ -42,9 +42,6 @@ module.exports = (sequelize, DataTypes) => {
         },
         profile_picture: {
             type: DataTypes.BLOB
-        },
-        user_id: {
-
         }
     });
     //Relations for Profile table
