@@ -1,54 +1,72 @@
- <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-      </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Sign Up Form</h2>
-        <form class="signup">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="Email">
-          </div>
-           <div class="form-group">
-            <label for="exampleInputUsername1">Username</label>
-            <input class="form-control" id="username" placeholder="Username">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Password">
-          </div>
-          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span class="sr-only">Error:</span> <span class="msg"></span>
-          </div>
-          <button type="submit" class="btn btn-default">Sign Up</button>
-        </form>
-        <br />
-        <p>Or log in <a href="/login">here</a></p>
-      </div>
-    </div>
-  </div>
-<footer class="mastfoot mt-auto text-center">
-    <div class="inner">
-    <p>
-        <!-- collaborators -->
-        <a href="https://github.com/kdoh52" target="_blank">Kevin Doh</a>,
-        <a href="https://github.com/aliciagorton" target="_blank">Alicia Gorton</a>, and
-        <a href="https://github.com/davidlindnerjr" target="_blank">David Lindner</a>
+{{!-- main --}}
+<div class="limiter">
+<!-- container-->
+    <div class="container-signup">
+        <!-- signup & image -->
+        <div class="signup-more" style="background-image: url('image/beach.png');" alt="dog on beach happy"></div>
+        {{!-- signup --}}
+        <div class="wrap-signup p-l-50 p-r-50 p-t-72 p-b-50">
+            {{!-- form--}}
+            <form class="signup-form validate-form">
+                <span class="signup-form-title p-b-59">
+                    CREATE ACCOUNT
+                </span>
+                {{!-- input --}}
+                {{!-- email --}}
+                <div class="wrap-input validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <span class="label-input">Email: </span>
+                    <input class="signup" type="email" name="email" placeholder="Email is required">
+                    <span class="focus-signup"></span>
+                </div>
+                {{!-- username --}}
+                <div class="wrap-input validate-input" data-validate="Username is required">
+                    <span class="label-input">Username: </span>
+                    <input class="signup" type="text" name="username" placeholder="Username...">
+                    <span class="focus-signup"></span>
+                </div>
+                <div class="wrap-input validate-input" data-validate="Password is required">
 
-        <!-- repository -->
-        Link to our: <a href=>Project Repository</a>
-        <!-- copy right -->
-        <a href="https://jgthms.com"></a>. The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php">Trilogy</a>.
-        <p>Copyright © 2020 All Rights Reserved.</p>
-        </p>
-    </div>
-</footer>
-<script type="text/javascript" src="js/signup.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <span class="label-input">Password: </span>
+                    <input class="signup" type="text" name="password" placeholder="*************">
+                    <span class="focus-signup"></span>
+                </div>
 
+                <div class="wrap-input validate-input" data-validate="Repeat Password is required">
+                    <span class="label-input">Confirm Password: </span>
+                    <input class="signup" type="text" name="repeat-password" placeholder="*************">
+                    <span class="focus-signup"></span>
+                </div>
+
+                <div class="flex-m w-full p-b-33">
+                    <div class="contact100-form-checkbox">
+                        <input class="input-checkbox" id="ckb1" type="checkbox" name="remember-me">
+                        <label class="label-checkbox" for="ckb1">
+                            <span class="txt1">
+                                I agree to the
+                                <a href="#" class="txt2 hov1">
+                                    Terms of User
+                                </a>
+                            </span>
+                        </label>
+                    </div>
+
+                    
+                </div>
+
+                <div class="container-signup-form-btn">
+                    <div class="wrap-signup-form-btn">
+                        <div class="signup-form-bgbtn"></div>
+                        <button class="signup-form-btn">
+                            create
+                        </button>
+                    </div>
+
+                    <a href="#" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
+                        sign in
+                        <i class="fa fa-long-arrow-right m-l-5"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
