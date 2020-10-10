@@ -2,7 +2,7 @@ $(document).ready(() => {
 
     console.log("Login JS loaded");
 
-  $("#login-btn").on('click', function(event){
+  $("#login-btn").submit(function(event){
       event.preventDefault();
 
       console.log('#login-btn clicked');
@@ -19,7 +19,7 @@ $(document).ready(() => {
       loginUser(getUser)
   });
 
-  $("#signup-btn").on('click', function(event){
+  $("#signup-btn").submit( function(event){
     event.preventDefault();
 
     console.log('#signup-btn clicked');
