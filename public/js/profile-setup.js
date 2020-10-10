@@ -25,9 +25,9 @@ $(document).ready(() => {
     });
 
     function createProfile(dogProfile) {
-        $.post("/api/createProfile", dogProfile)
+        $.post("/api/profiles", dogProfile)
         .then(()=>{
-            window.location.replace("/dashboard");
+            window.location.replace("/profile");
         })
         .catch((err)=>{
             console.log(err);

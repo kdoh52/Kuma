@@ -48,9 +48,9 @@ module.exports = (sequelize, DataTypes)=>{
     Profile.associate = (models)=>{
         //Profile belongs to a user
         Profile.belongsTo(models.User, {
-            foreignKey: {
-                allowNull: false,
-            }
+            foreignKey: "UserId",
+                as: "User"
+            
         });
         //A profile has many posts
         Profile.hasMany(models.Post, {

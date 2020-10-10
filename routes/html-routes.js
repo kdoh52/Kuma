@@ -27,4 +27,8 @@ module.exports = (app)=>{
     res.render("profile");
   });
 
+  app.get("/dashboard", isAuthenticated, (req, res)=>{
+    res.render("dashboard");
+  })
+
 };

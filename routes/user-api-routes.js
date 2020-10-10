@@ -19,19 +19,19 @@ module.exports = (app)=>{
     });
   });
 
-  app.post("/api/user", (req, res)=>{
+  app.post("/api/users", (req, res)=>{
     db.User.create(req.body).then((dbUser)=>{
       res.json(dbUser);
     });
   });
 
-  app.delete("/api/authors/:id", function(req, res) {
-    db.Author.destroy({
+  app.delete("/api/users/:username", (req, res)=>{
+    db.User.destroy({
       where: {
-        id: req.params.id
+        username: req.params.username
       }
-    }).then(function(dbAuthor) {
-      res.json(dbAuthor);
+    }).then((dbUser)=>{
+      res.json(dbUser);
     });
   });
 
