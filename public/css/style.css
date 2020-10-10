@@ -195,6 +195,8 @@ iframe {
 
 .signup-form {
   width: 100%;
+  padding: 10%;
+  padding-top: 50px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -207,6 +209,7 @@ iframe {
 .signup-form-title {
   display: block;
   width: 100%;
+  margin-bottom: 20px;
   font-family: Poppins-Bold;
   font-size: 39px;
   color: #333333;
