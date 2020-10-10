@@ -19,7 +19,7 @@ $(document).ready(() => {
       loginUser(getUser)
   });
 
-  $("#signup-btn").on('click', function(event){
+  $("#signup-btn").submit( function(event){
     event.preventDefault();
 
     console.log('#signup-btn clicked');
