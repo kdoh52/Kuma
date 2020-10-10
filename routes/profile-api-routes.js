@@ -33,6 +33,7 @@ module.exports = (app)=>{
 
   // POST route for saving a new post
   app.post("/api/profiles", (req, res)=>{
+    console.log(req.body)
     db.Profile.create({
       bio: req.body.petBio,
       pet_name: req.body.petName,

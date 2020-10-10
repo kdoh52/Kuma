@@ -1,5 +1,7 @@
 //When user clicks the "Creat Profile Button!" the user will be redirected to their profile
 
+
+
 $(document).ready(() => {
 
     function createProfile(dogProfile) {
@@ -29,7 +31,8 @@ $(document).ready(() => {
             petPersonality: $("#petPersonality").val().trim(), 
             petChip: $("#petChip").val().trim(),
             petVet: $("#petVet").val().trim(),
-            petImg: $("#petImg").val().trim()
+            petImg: $("#petImg").val().trim(),
+            
         };
 
         if (!dogProfile.petName || !dogProfile.petBreed || !dogProfile.petAge || !dogProfile.petEnergy || !dogProfile.petPersonality || !dogProfile.petBio || !dogProfile.petChip || !dogProfile.petVet) {
