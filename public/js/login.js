@@ -2,17 +2,17 @@ $(document).ready(() => {
 
     console.log("Login JS loaded");
 
-  $("#login-btn").submit(function(event){
+  $("#loginForm").submit(function(event){
       event.preventDefault();
 
       console.log('#login-btn clicked');
 
       const getUser = {
-          username: $("#loginUser").val().trim(),
+          email: $("#loginEmail").val().trim(),
           password: $("#loginPassword").val().trim()
       };
 
-      if (!getUser.username || !getUser.password) {
+      if (!getUser.email || !getUser.password) {
           return;
       }
       console.log(getUser)
@@ -30,7 +30,7 @@ $(document).ready(() => {
 
   function loginUser(getUser) {
       $.post("/api/login", {
-       username: getUser.username,
+        email: getUser.email,
         password: getUser.password
       })
       .then(()=>{
