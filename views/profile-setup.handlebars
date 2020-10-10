@@ -1,42 +1,97 @@
-<h1>Set up your profile!</h1>
+{{!-- main --}}
+<div class="limiter">
+<!-- container-->       
+    <div class="container-profile-setup">   
+        {{!-- image --}}
+        <div class="profile-setup-more" style="background-image: url('image/petting.png');" alt="dog on beach happy"></div>
+        {{!-- profile-setup & padding--}}
+        <div class="wrap-profile-setup p-l-50 p-r-50 p-t-72 p-b-50">
+            {{!-- form--}}
+            <form id="profile-setup" class="profile-setup-form validate-form">
+                <span class="profile-setup-form-title p-b-59">
+                Let's Setup Your Account!
+            </span>
+                {{!-- input --}}
+                {{!-- Pet Name --}}
+                <div class="wrap-profile-setup validate-input" data-validate="Pet Name required"
+                    <span class="label-input">Pet Name: </span>
+                    <input id="petName" type="text" name="petName" placeholder="******">
+                    <span class="focus-profile-setup"></span>
+                </div>
+                {{!-- Breed --}}
+                <div class="wrap-profile-setup validate-input" data-validate="Breed required"
+                    <span class="label-input">Breed: </span>
+                    <input id="petBreed" type="text" name="petBreed" placeholder="******">
+                    <span class="focus-profile-setup"></span>
+                </div>
+                {{!-- Age --}}
+                    <div class="wrap-profile-setup validate-input" data-validate="Age required"
+                    <span class="label-input">Age: </span>
+                    <input id="petAge" type="text" name="petAge" placeholder="**">
+                    <span class="focus-profile-setup"></span>
+                </div>
+                {{!-- Bio/Gender --}}
+                <div class="wrap-profile-setup validate-input" data-validate="Bio required"
+                    <span class="label-input">Gender: </span>
+                    <input id="petBio" type="text" name="petBio" placeholder="*">
+                    <span class="focus-profile-setup"></span>
+                </div>
+                {{!-- Energy Level --}}
+                <div class="wrap-profile-setup validate-input" data-validate="Energy required"
+                    <span class="label-input">Energy Level: </span>
+                    <input id="petEngery" type="text" name="petEnergy" placeholder="*">
+                    {{!-- <select id="petEnergy">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select> --}}
+                    <span class="focus-profile-setup"></span>
+                </div>
+                {{!-- Personality: --}}
+                <div class="wrap-profile-setup validate-input" data-validate="Personality required"
+                    <span class="label-input">Personality: </span>
+                    <select id="petPersonality">
+                        <option value="1">Shy</option>
+                        <option value="2">Comfortable with people</option>
+                        <option value="3">Comfortable with dogs</option>
+                        <option value="4">Comfortable with both</option>
+                    </select>
+                    <span class="focus-profile-setup"></span>
+                </div>
+                {{!-- Microchip --}}
+                <div class="wrap-profile-setup validate-input" data-validate="Microchip required"
+                    <span class="label-input">Does your pet have a microchip?: </span>
+                        <select id="petChip">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                    <span class="focus-profile-setup"></span>
+                </div>
+                {{!-- Vet --}}
+                <div class="wrap-profile-setup validate-input" data-validate="Vet required"
+                    <span class="label-input">Veterinarian Office Information: </span>
+                    <input id="petVet" type="text" name="petVet" placeholder="**************">
+                    <span class="focus-profile-setup"></span>
+                </div>
+                {{!-- Set a Profile Picture --}}
+                <div class="wrap-profile-setup validate-input" 
+                    <span class="label-input">Profile Picture: </span>
+                    <input id="petImg" type="file" name="img" accept="image/*">
+                    <span class="focus-profile-setup"></span>
+                </div>
+                {{!-- Button --}}
+                <div class="container-profile-setup-form-btn">
+                    <div class="wrap-profile-setup-form-btn">
+                        <div class="profile-setup-form-bgbtn"></div>
+                        <button class="submitPet profile-setup-form-btn">
+                            Create Profile
+                        </button>
+                    </div>                           
+                </div>
+            </form>
+        </div>
+    </div>            
+</div>
 
-<form class="profileSetup">
-    <label>Pet Name:</label>
-    <input type="text" id="petName">
-    <br>
-    <label>Breed:</label>
-    <input type="text" id="petBreed">
-    <br>
-    <label>Age (human years):</label>
-    <input type="text" id="petAge">
-    <br>
-    <label>Energy Level:</label>
-    <select id="petEnergy">
-        <option value="low">Low</option>
-        <option value="medium">Medium</option>
-        <option value="high">High</option>
-    </select>
-    <br>
-    <label>Personality:</label>
-    <input type="text" id="petPersonality">
-    <br>
-    <label>Bio:</label>
-    <input type="text" id="petBio">
-    <br>
-    <label>Does your pet have a microchip?:</label>
-    <select id="petChip">
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-    </select>
-    <br>
-    <label>Vet Office:</label>
-    <input type="text" id="petVet">
-    <br>
-    <label for="img">Profile picture:</label>
-    <input type="file" id="petImg" name="img" accept="image/*">
-    <br>
-    <button class="submitPet" type="submit">Create Profile!</button>
-</form>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/profile-setup.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/profile-setup.js"></script>

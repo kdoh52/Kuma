@@ -50,11 +50,11 @@ module.exports = (sequelize, DataTypes) => {
     //Relations for Profile table
     Profile.associate = (models) => {
         //Profile belongs to a user
-        User.belongsToMany(models.Profile, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
+        Profile.belongsTo(models.User, {
+            foreignKey: "UserId",
+                as: "User"
+            
+        }); 
         //A profile has many posts
         Profile.hasMany(models.Post, {
             onDelete: "cascade",

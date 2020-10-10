@@ -1,7 +1,9 @@
 $(document).ready(() => {
 
-    $(".signup").submit(function(event){
+    $("#signup-form").submit(function(event){
         event.preventDefault();
+
+        console.log('Signup form clicked');
 
         let newUser = {
             email: $("#email").val().trim(),
@@ -18,10 +20,10 @@ $(document).ready(() => {
 
     function signupUser(newUser) {
         $.post("/api/signup", newUser)
-        .then(()=>{
+        .then(() => {
             window.location.replace("/profile-setup");
         })
-        .catch((err)=>{
+        .catch((err) => {
             console.log(err);
         });
     };
