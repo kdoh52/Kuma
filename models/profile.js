@@ -51,7 +51,7 @@ module.exports = (sequelize, DataTypes)=>{
             foreignKey: "UserId",
                 as: "User"
             
-        });
+        }); 
         //A profile has many posts
         Profile.hasMany(models.Post, {
             onDelete: "cascade",

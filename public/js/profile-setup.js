@@ -24,9 +24,9 @@ $(document).ready(() => {
             petName: $("#petName").val().trim(),
             petBreed: $("#petBreed").val().trim(),
             petAge: $("#petAge").val().trim(),
-            petEnergy: $("#petEnergy").val().trim(),
-            petPersonality: $("#petPersonality").val().trim(),
             petBio: $("#petBio").val().trim(),
+            petEnergy: $("#petEnergy").val().trim(),
+            petPersonality: $("#petPersonality").val().trim(), 
             petChip: $("#petChip").val().trim(),
             petVet: $("#petVet").val().trim(),
             petImg: $("#petImg").val().trim()
