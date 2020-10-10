@@ -6,14 +6,18 @@ module.exports = (app)=>{
     if(req.user) {
       res.redirect("/profile");
     }
-    res.render("signup");
+    res.render("login");
   });
 
   app.get("/login", (req, res) => {
     if(req.user){
       res.redirect("/profile");
     }
-    res.render("login");
+    res.render("signup");
+  });
+
+  app.get("/signup", (req, res)=>{
+    res.render("signup");
   });
 
   app.get("/profile-setup", (req, res)=>{

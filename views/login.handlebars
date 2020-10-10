@@ -1,45 +1,48 @@
-{{!-- main --}}
-<div class="limiter">
+{{!-- style2.css --}}
+<link rel="stylesheet" href="css/style2.css" type="text/css">
 <!-- container-->
-    <div class="container-signin">
-        <!-- signin & image -->
-        <div class="signin-more" style="background-image: url('image/petting.png');" alt="dog on beach happy"></div>
-        {{!-- signin --}}
-        <div class="wrap-signin p-l-50 p-r-50 p-t-72 p-b-50">
-            {{!-- form--}}
-            <form class="signin-form validate-form">
-                <span class="signin-form-title p-b-59">
-                    Welcome Back 
-                </span>
+    <div class="container">
+        <!-- login -->
+        <div class="login">
+            <h1>Kuma</h1>
+            <button class="login__avatar" id="toggleLogin">
+                <img src="/public/image/playing.png" alt="dog running" /> 
+            </button>
+            {{!-- form --}}
+            <div id ="login" class="login-form">
                 {{!-- input --}}
-                {{!-- username --}}
-                <div class="wrap-input validate-input" data-validate="Username is required">
-                    <span class="label-input">Username: </span>
-                    <input class="signin" type="text" name="username" placeholder="Username...">
-                    <span class="focus-signin"></span>
-                </div>
-                <div class="wrap-input validate-input" data-validate="Password is required">
-
-                    <span class="label-input">Password: </span>
-                    <input class="signin" type="text" name="password" placeholder="*************">
-                    <span class="focus-signin"></span>
-                </div>
-
-              {{!-- login button --}}
-                <div class="container-signin-form-btn">
-                    <div class="wrap-signin-form-btn">
-                        <div class="signin-form-bgbtn"></div>
-                        <button class="signin-form-btn">
-                            login
-                        </button>
+                <div class="login-input">
+                    {{!-- username --}}
+                    <div class="field">
+                        <input id="loginUser" type="text"  name="username" class="input" requiredpattern=.*\S.* />
+                        <label for="loginUser" class="label">Username</label>
                     </div>
-
-                    <a href="#" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
-                        sign up 
-                        <i class="fa fa-long-arrow-right m-l-5"></i>
-                    </a>
+                    {{!-- password --}}
+                    <div class="field">
+                        <input id="loginPassword" type="password"  name="password" class="input" requiredpattern=.*\S.* />
+                        <label for="loginPassword" class="label">Password</label>
+                    </div>
+                    {{!-- button --}}
+                    <div class="login-footer container-login-form-btn">
+                        <div class="wrap-login-form-btn">
+                            <div class="login-form-bgbtn"></div>
+                            <button id="login-btn"class="login-form-btn">
+                                Login
+                            </button>
+                             <button id="signup-btn" class="login-form-btn">
+                                Sign Up
+                            </button>
+            
+                        </div>
+                    </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
+
+{{!-- footer --}}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+

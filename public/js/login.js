@@ -1,23 +1,36 @@
 $(document).ready(() => {
 
-  $(".login").submit(function(event){
+    console.log("Login JS loaded");
+
+  $("#login-btn").on('click', function(event){
       event.preventDefault();
 
+      console.log('#login-btn clicked');
+
       const getUser = {
-          email: $("#email").val().trim(),
-          password: $("#password").val().trim()
+          username: $("#loginUser").val().trim(),
+          password: $("#loginPassword").val().trim()
       };
 
-      if (!getUser.email || !getUser.password) {
+      if (!getUser.username || !getUser.password) {
           return;
       }
       console.log(getUser)
       loginUser(getUser)
   });
 
+  $("#signup-btn").on('click', function(event){
+    event.preventDefault();
+
+    console.log('#signup-btn clicked');
+
+    window.location.replace("/signup");
+    
+});
+
   function loginUser(getUser) {
       $.post("/api/login", {
-        email: getUser.email,
+       username: getUser.username,
         password: getUser.password
       })
       .then(()=>{
@@ -27,4 +40,13 @@ $(document).ready(() => {
           console.log(err);
       });
   };
+  // Toggel Image 
+  $('#toggleLogin').on('click', function () {
+        [].map.call($('.login'), function(el) {
+        el.classList.toggle('login--open');
+        });
+    });
+
 });
+
+
