@@ -14,7 +14,13 @@
     font-family: sans-serif;
     min-height: 100%;
     background: linear-gradient(to bottom, #68EACC 0%, #497BE8 100%);
-    color: #777;
+    color: white;
+  }
+  a {
+    margin-left: 10px;
+    font-family: sans-serif;
+    min-height: 100%;
+    color: white;
   }
 
   img {
@@ -107,10 +113,11 @@
   }
   .label {
     position: absolute;
-    height: 2rem;
+    height: 1rem;
+    /* width: 0rem; */
     line-height: 2rem;
     bottom: 0;
-    color: #999;
+    color: rgb(197, 197, 197);
     transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   .input {
@@ -157,6 +164,9 @@
   .btn:hover,
   .btn:focus {
     background: #A678E2;
+  }
+  #signup-btn {
+    color: white;
   }
   
   
