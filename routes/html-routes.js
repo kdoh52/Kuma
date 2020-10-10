@@ -7,8 +7,10 @@ var connection = mysql.createConnection({
   port: 3306,
   user: "root",
   password: "1234",
-  database: "kuma_db"
+  database: "kuma_db",
+  multipleStatements: true
 });
+connection.connect();
 
 module.exports = (app)=>{
 
@@ -38,10 +40,13 @@ module.exports = (app)=>{
   });
 
   app.get("/profile", isAuthenticated, (req, res) => {
-    connection.query("SELECT * FROM Profiles WHERE id=1", function(err, data) {
+    connection.query("SELECT * FROM Users WHERE id=?; SELECT * FROM Profiles WHERE id=?", ["bb5f6087-621c-462f-a633-6450af1ce9ef", 1], function(err, data) {
       if (err) throw err;
-      // console.log(Profiles: data[0].pet_name)
-      res.render("profile", { Profiles: data });
+      console.log(data[0])
+      console.log(data[1])
+
+      // res.render("profile", { Users: data, Profiles: data });
+      res.render("profile", { Users: data[0], Profiles: data[1] });
     })
   });
 
