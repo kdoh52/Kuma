@@ -18,7 +18,7 @@ module.exports = (app)=>{
     if(req.user) {
       res.redirect("/profile");
     }
-    res.render("signup");
+    res.render("login");
   });
 
   app.get("/login", (req, res) => {
@@ -42,10 +42,8 @@ module.exports = (app)=>{
   app.get("/profile", isAuthenticated, (req, res) => {
     connection.query("SELECT * FROM Users WHERE id=?; SELECT * FROM Profiles WHERE id=?", ["bb5f6087-621c-462f-a633-6450af1ce9ef", 1], function(err, data) {
       if (err) throw err;
-      console.log(data[0])
-      console.log(data[1])
-
-      // res.render("profile", { Users: data, Profiles: data });
+      // console.log(data[0])
+      // console.log(data[1])
       res.render("profile", { Users: data[0], Profiles: data[1] });
     })
   });
