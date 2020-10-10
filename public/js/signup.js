@@ -20,10 +20,10 @@ $(document).ready(() => {
 
     function signupUser(newUser) {
         $.post("/api/signup", newUser)
-        .then(()=>{
+        .then(() => {
             window.location.replace("/profile-setup");
         })
-        .catch((err)=>{
+        .catch((err) => {
             console.log(err);
         });
     };
