@@ -1,7 +1,9 @@
 $(document).ready(() => {
 
-    $(".signup").submit(function(event){
+    $("#signup-form").submit(function(event){
         event.preventDefault();
+
+        console.log('Signup form clicked');
 
         let newUser = {
             email: $("#email").val().trim(),
