@@ -1,13 +1,13 @@
-module.exports = (sequelize, DataTypes)=>{
+module.exports = (sequelize, DataTypes) => {
     let Profile = sequelize.define("Profile", {
-        bio:{
+        bio: {
             type: DataTypes.TEXT,
             allowNull: false,
             validate: {
                 len: [1]
             }
         },
-        pet_name:{
+        pet_name: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
@@ -42,14 +42,17 @@ module.exports = (sequelize, DataTypes)=>{
         },
         profile_picture: {
             type: DataTypes.BLOB
+        },
+        user_id: {
+
         }
     });
     //Relations for Profile table
-    Profile.associate = (models)=>{
+    Profile.associate = (models) => {
         //Profile belongs to a user
-        Profile.belongsTo(models.User, {
+        User.belongsToMany(models.Profile, {
             foreignKey: {
-                allowNull: false,
+                allowNull: false
             }
         });
         //A profile has many posts
