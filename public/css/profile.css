@@ -37,7 +37,7 @@
     content: '';
     width: 32px;
     height: 4px;
-    background-color: #fff;
+    /* background-color: #fff; */
     left: 50%;
     bottom: 0;
     -webkit-transition: all 0.3s ease-out 0s;
@@ -72,7 +72,8 @@
   
     
   .nav-link {
-    color: #5a82f0;
+    color: white;
+    margin-top: 15px;
   }
   .bio-vet {
     margin-top: 20px;
@@ -82,5 +83,18 @@
     margin-right: 5%;
   }
   h1 {
-    color: #5a82f0;
+    color: white;
+    margin-top: 12px;
+  }
+  .navbar-container {
+    background: -webkit-linear-gradient(top, #76faed 0%, #5b7dda 100%);
+    background: -o-linear-gradient(left, #76faed 0%, #5b7dda 100%);
+    background: linear-gradient(to top, #76faed 0%, #5b7dda 100%);
+  }
+  .profile-pic {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .lighter-text {
+    opacity: 70%;
   }
