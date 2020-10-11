@@ -183,6 +183,8 @@ input:valid + .label {
     opacity: 0.9;
   }
 
+  /*-----------------------------*/
+
   .title{
     color: white;
     font-weight: bold;
