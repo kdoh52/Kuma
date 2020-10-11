@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
-  password: "123456",
+  password: "1234",
   database: "kuma_db",
   multipleStatements: true
 });
@@ -40,7 +40,7 @@ module.exports = (app)=>{
   });
 
   app.get("/profile", isAuthenticated, (req, res) => {
-    connection.query("SELECT * FROM Users WHERE id=?; SELECT * FROM Profiles WHERE id=?", ["bb5f6087-621c-462f-a633-6450af1ce9ef", 1], function(err, data) {
+    connection.query("SELECT * FROM Users WHERE id=?; SELECT * FROM Profiles WHERE id=?", [1, 1], function(err, data) {
       if (err) throw err;
       // console.log(data[0])
       // console.log(data[1])
