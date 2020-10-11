@@ -18,7 +18,7 @@ $(document).ready(() => {
         });
     };
 
-    $("#profile-setup").submit(function(event){
+    $("#setup").submit(function(event){
         event.preventDefault();
         console.log('profile-setup was submitted');
 
