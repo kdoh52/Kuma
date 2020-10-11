@@ -71,6 +71,16 @@
   
   
     
-  .nav-item {
-    margin-left: 15px;
+  .nav-link {
+    color: #5a82f0;
+  }
+  .bio-vet {
+    margin-top: 20px;
+  }
+  .basic-info {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  h1 {
+    color: #5a82f0;
   }
