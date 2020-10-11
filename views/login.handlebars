@@ -2,47 +2,48 @@
 <link rel="stylesheet" href="css/login.css" type="text/css">
 
 <!-- container-->
-    <div class="container">
-        <div class="login">
-        <!-- login -->
-        <div class="login-input-background">
-            <div class="title">Kuma</div>
-            <button class="login__avatar" id="toggleLogin">
-                <img src="./image/playing.png" alt="dog running" /> 
-            </button>
-            {{!-- form --}}
-            <form id="loginForm">
-            <div id ="login" class="login-form">
-                {{!-- input --}}
-                <div class="login-input">
-                    {{!-- username --}}
-                    <div class="field">
-                        <input id="loginEmail" type="text"  name="email" class="input" placeholder="email" requiredpattern=.*\S.* />
-                        {{!-- <label for="loginEmail" class="label">Email</label> --}}
-                    </div>
-                    {{!-- password --}}
-                    <div class="field">
-                        <input id="loginPassword" type="password"  name="password" class="input" placeholder="password" requiredpattern=.*\S.* />
-                        {{!-- <label for="loginPassword" class="label">Password</label> --}}
-                    </div>
-                    {{!-- button --}}
-                    <div class="login-footer container-login-form-btn">
-                        <div class="wrap-login-form-btn">
-                            <div class="login-form-bgbtn"></div>
-                            <button id="login-btn"class="login-form-btn btn-login">
-                                Login
-                            </button>
-                            <span> or </span>
-                             <button id="signup-btn">
-                                <a href="/signup" class="btn-signup">Sign Up</a>
-                            </button>
+<div class="container">
+    <div class="row">
+        <div class="col login-input-background">
+            <div class="login">
+            <!-- login -->
+                <div>
+                    <div class="title">Kuma</div>
+                    <button class="login__avatar" id="toggleLogin">
+                        <img src="./image/playing.png" alt="dog running" /> 
+                    </button>
+                </div>
+                <div class="col">
+                {{!-- form --}}
+                <form id="loginForm">
+                    <div id ="login" class="login-form">
+                        {{!-- input --}}
+                        <div class="login-input">
+                        {{!-- username --}}
+                            <div class="field">
+                                <input id="loginEmail" type="text"  name="email" class="input" placeholder="email" requiredpattern=.*\S.* />
+                                {{!-- <label for="loginEmail" class="label">Email</label> --}}
+                            </div>
+                        {{!-- password --}}
+                        <div class="field">
+                            <input id="loginPassword" type="password"  name="password" class="input" placeholder="password" requiredpattern=.*\S.* />
+                            {{!-- <label for="loginPassword" class="label">Password</label> --}}
+                        </div>
+                        {{!-- button --}}
+                        <div class="login-footer container-login-form-btn">
+                            <div class="wrap-login-form-btn">
+                                <div class="login-form-bgbtn"></div>
+                                <button id="login-btn"class="login-form-btn btn-login">Login</button>
+                                <span> or </span>
+                                <button id="signup-btn">
+                                    <a href="/signup" class="btn-signup">Sign Up</a>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
-            </form>
         </div>
-    </div>
     </div>
 </div>
 
