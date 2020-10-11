@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         micro_chip: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.STRING,
             allowNull: false
         },
         vet_clinic: {
