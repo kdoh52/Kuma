@@ -1,38 +1,89 @@
-{{!-- UI View --}}
-<div class= ui-view>
-    {{!-- Navbar START --}}
-    <div class="navbar-container">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <nav class="navbar navbar-expand-lg">
-                        <a class="navbar-brand" href="#">
-                            <h1>KUMA</h1>
-                        </a>
-                        
-                        <div class="collapse navbar-collapse sub-menu-bar" id="navbar">
-                            <ul class="navbar-nav ml-auto">
-                                <li class="nav-item active">
-                                    <a class="page-scroll" href="#Profile">Profile</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="page-scroll" href="#Dashboard">Dashboard</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="page-scroll" href="#contact">Contact</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="page-scroll" href="#logout">Logout</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <!-- Company Name -->
+                <nav class="hidden">
+                    <div class="col-md-2 col-sm-2">
+                        <a class="btn btn-light" href="/profile.html">Kuma</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+   
+        <!-- Community Posts  -->
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="post-container">
+                    <h1>Community Postings</h1>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th># of Posts</th>
+                                <th>See Author's Posts</th>
+                                <th>New Post</th>
+                                <th>Delete Author</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="form-row">
+                                <form id="post-form">
+                                    <td colspan="12">
+                                        <input placeholder="Ente topic" id="post-name" type="text" />
+                                    </td>
+                                    <td>
+                                        <button type="submit" class="btn btn-success">Create Post</button>
+                                    </td>
+                                </form>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div> 
-        </div> 
-    </div>   
-    {{!-- Navbar END --}}
-    <div>
-        <h1>DASHBOARD</h1>
+            </div>
+        </div>
+
+        <!-- Lorem Ipsum-->
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae dignissimos maiores perspiciatis sunt. Quaerat autem sint placeat dolorem necessitatibus? Earum, enim corporis. Aut maxime dolores facilis unde quasi sed dolore.</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae dignissimos maiores perspiciatis sunt. Quaerat autem sint placeat dolorem necessitatibus? Earum, enim corporis. Aut maxime dolores facilis unde quasi sed dolore.</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae dignissimos maiores perspiciatis sunt. Quaerat autem sint placeat dolorem necessitatibus? Earum, enim corporis. Aut maxime dolores facilis unde quasi sed dolore.</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae dignissimos maiores perspiciatis sunt. Quaerat autem sint placeat dolorem necessitatibus? Earum, enim corporis. Aut maxime dolores facilis unde quasi sed dolore.</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae dignissimos maiores perspiciatis sunt. Quaerat autem sint placeat dolorem necessitatibus? Earum, enim corporis. Aut maxime dolores facilis unde quasi sed dolore.</p>
+            </div>
+        </div>
+
+        <!-- footer start -->
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <footer class="card text-center">
+                    <div class="card-body">
+
+                        <p>
+                            <!-- collaborators -->
+                            <a href="https://github.com/kdoh52" target="_blank">Kevin Doh</a>, 
+                            <a href="https://github.com/aliciagorton" target="_blank">Alicia Gorton</a>, and
+                            <a href="https://github.com/davidlindnerjr" target="_blank">David Lindener</a>
+                        </p>
+
+                        <p>
+                            <!-- repository -->
+                            Link to our: <a href=>Project Repository</a>
+                            <!-- copy right -->
+                            <a href="https://jgthms.com"></a>. The source code is licensed
+                            <a href="http://opensource.org/licenses/mit-license.php">Triology</a>. 
+                        </p>
+                        <p>
+                            Copyright © 2020 All Rights Reserved.
+                        </p>
+
+                    </div>
+                </footer>
+            </div>
+        </div>
     </div>
-</div>
+	<!-- Custom Script -->
+	<script src="js/dashboard.js" type="text/javascript"></script>
+</body>
