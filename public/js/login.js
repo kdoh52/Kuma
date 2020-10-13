@@ -28,18 +28,66 @@ $(document).ready(() => {
     
 });
 
-  function loginUser(getUser) {
-      $.post("/api/login", {
-        email: getUser.email,
-        password: getUser.password
-      })
-      .then(()=>{
-          window.location.replace("/profile");
-      })
-      .catch((err)=>{
-          console.log(err);
-      });
-  };
+//   function loginUser(getUser) {
+//       $.post("/api/login", {
+//         email: getUser.email,
+//         password: getUser.password
+//       })
+//       .then(()=>{
+//           window.location.replace("/profile");
+//       })
+//       .catch((err)=>{
+    //           console.log(err);
+    //       });
+    //   };
+    
+function getId() {
+    $.get("/api/user_data").then((data) => {
+        let id = data.id;
+        console.log(id);
+
+        // let globalVar = {
+        //     global: id
+        // }
+        // module.exports = { global: id }
+
+        // $.get("/profile/:id", id)
+        // .then((data)=> {
+        //     // window.location.replace("/profile/" + id)
+        // })
+        // .catch((err)=> {
+        //     console.log(err)
+        // })
+    })
+    .then(()=> {
+        // window.location.replace("/profile/:id");
+    })
+}
+
+function loginUser(getUser) {
+    $.post("/api/login", {
+      email: getUser.email,
+      password: getUser.password
+    })
+    .then(()=>{
+        let id = getId()
+        console.log("it is: " + id)
+
+        // $.get("/api/profiles/" + id)
+        // .then((data)=> {
+        //     console.log(data)
+        // })
+        // .catch((err)=> {
+        //     console.log(err)
+        // })
+
+        window.location.replace("/profile");
+    })
+    .catch((err)=>{
+        console.log(err);
+    });
+};
+
   // Toggel Image 
   $('#toggleLogin').on('click', function () {
         [].map.call($('.login'), function(el) {

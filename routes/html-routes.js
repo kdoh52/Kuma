@@ -1,6 +1,8 @@
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 var mysql = require("mysql");
+// var globalVar = require("../public/js/login");
+// console.log(globalVar.global)
 
 var connection = mysql.createConnection({
   host: "localhost",
@@ -39,14 +41,27 @@ module.exports = (app)=>{
     res.render("profile-setup");
   });
 
+  // app.get("/profile", isAuthenticated, (req, res) => {
+  //   connection.query("SELECT * FROM Users WHERE id=?; SELECT * FROM Profiles WHERE id=?", [1, 1], function(err, data) {
+  //     if (err) throw err;
+  //     res.render("profile", { Users: data[0], Profiles: data[1] });
+  //   })
+  // });
+
   app.get("/profile", isAuthenticated, (req, res) => {
-    connection.query("SELECT * FROM Users WHERE id=?; SELECT * FROM Profiles WHERE id=?", [1, 1], function(err, data) {
+    connection.query("SELECT * FROM Users WHERE id=?; SELECT * FROM Profiles WHERE id=?", [2, 2], function(err, data) {
       if (err) throw err;
-      // console.log(data[0])
-      // console.log(data[1])
       res.render("profile", { Users: data[0], Profiles: data[1] });
     })
   });
+
+  // app.get("/profile/:id", isAuthenticated, (req, res) => {
+  //   connection.query("SELECT * FROM Users WHERE id=?; SELECT * FROM Profiles WHERE id=?", [req.params.id, req.params.id], function(err, data) {
+  //     if (err) throw err;
+  //     res.render("profile", { Users: data[0], Profiles: data[1] });
+  //     console.log(req.params.id);
+  //   })
+  // });
 
   app.get("/dashboard", isAuthenticated, (req, res)=>{
     res.render("dashboard");
