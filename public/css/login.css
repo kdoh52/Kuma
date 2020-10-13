@@ -176,14 +176,14 @@ input:valid + .label {
     }
   }
 
+    /*-----------------------------*/
+
   .login-input-background{
     padding: 70px;
     border-radius: 20px;
     background-color: black;
     opacity: 0.9;
   }
-
-  /*-----------------------------*/
 
   .title{
     color: white;
@@ -216,3 +216,5 @@ input:valid + .label {
     color: #17d4bb;
     text-decoration: none;
   }
+
+ 
