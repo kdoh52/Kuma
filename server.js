@@ -1,8 +1,9 @@
 const express = require("express");
 const session = require("express-session");
-// Requiring passport as we've configured it
 const passport = require("./config/passport");
-var mysql = require("mysql");
+const mysql = require("mysql");
+const path = require("path");
+const multer = require("multer");
 //Protect API keys with environment variables
 require("dotenv").config();
 
@@ -35,9 +36,61 @@ require("./routes/user-api-routes.js")(app);
 require("./routes/post-api-routes.js")(app);
 require("./routes/profile-api-routes.js")(app);
 
+//Image Storage
+const storage = multer.diskStorage({
+  destination: "./public/uploads",
+  filename: function(req, file, cb){
+    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+  }
+});
+//Upload
+const upload = multer({
+  storage: storage,
+  fileFilter: function(req, file, cb){
+    checkFileType(file, cb);
+  }
+  //name from profile-setup.handlebars
+}).single("img");
+
+function checkFileType(file, cb){
+  const fileTypes = /jpeg|jpg|png|png|gif/;
+  const extname = fileTypes.test(path.extname(file.originalname).toLowerCase());
+  //check mime type
+  const mimeType = fileTypes.test(file.mimeType);
+
+  if(mimeType && extname){
+    return cb(null, true);
+  }
+  else{
+    cb("Error: images only");
+  }
+}
+
+//upload route
+app.post('/upload', (req, res)=>{
+  upload(req, res, (err) => {
+    if(err){
+      res.render({msg: err});
+    }
+    else{
+      if(req.file == undefined){
+        res.render("profile-setup", {
+          msg: "Error: No File Selected"
+        })
+      }
+      else{
+        res.render("profile", {
+          //msg: "File Uploaded",
+          file: `uploads/${req.file.filename}`
+        });
+      }
+    }
+  });
+});
+
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(()=>{
-  app.listen(PORT, HOST, ()=>{
+  app.listen(PORT, ()=>{
     console.log(`Server Started On PORT: ${PORT}`);
   });
 });
