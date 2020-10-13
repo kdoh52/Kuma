@@ -1,111 +1,102 @@
 <link rel="stylesheet" href="css/setup.css" type="text/css">
+{{!-- Main Container --}}
+<div class="container-fluid bg"> 
+  <div class="row">
+    <div class="col-md-4 col-sm-4 col-xs-12"></div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+        {{!-- FORM --}}
+      <form id="setup-form" class="setup-form validate-form">
+        <h1>Profile Setup</h1> 
 
-{{!-- main --}}
-<div class="limiter">
-    <!-- container-->
-    <div class="container-setup">
-
-
-        <div class="setup-more" style="background-image: url('image/sadie.jpeg');" alt="dog on beach happy"></div>
-
-
-        <div class="wrap-setup">
-
-
-
-            <form id="setup-form" class="setup-form validate-form">
-                <span class="setup-form-title ">
-                    Let's Setup Your Account!
-                </span>
-
-
-                <div class="wrap-input validate-input" data-validate="Pet Name required">
-
-                    <span class="label-input">Pet Name: </span>
-
-                    <input id="petName" class="setup" type="text" name="petName">
-
-                    <span class="focus-setup"></span>
-                </div>
-
-
-                <div class="wrap-input validate-input" data-validate="Breed required">
-                    <span class="label-input">Breed: </span>
-
-                    <input id="petBreed" class="setup" type="text" name="petBreed">
-                    <span class="focus-setup"></span>
-                </div>
-
-
-                <div class="wrap-input validate-input" data-validate="Age required">
-                    <span class="label-input">Age: </span>
-
-                    <input id="petAge" class="setup" type="text" name="petAge">
-                    <span class="focus-setup"></span>
-                </div>
-
-                <div class="wrap-input validate-input" data-validate="Bio required">
-                    <span class="label-input">Bio: </span>
-                    <input id="petBio" class="setup" type="text" name="petBio">
-                    <span class="focus-setup"></span>
-                </div>
-
-                <div class="wrap-input validate-input" data-validate="Energy required">
-                    <span class="label-input">Energy Level: </span>
-                    <select id="petEnergy" class="setup" type="text" name="petEnergy">
-                        <option value="low">Low</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
-                    </select>
-                    <span class="focus-setup"></span>
-                </div>
-
-                <div class="wrap-input validate-input" data-validate="Personality required">
-                    <span class="label-input">Personality: </span>
-                    <select id="petPersonality" class="setup" name="petPersonality">
-                        <option value="Shy">Shy</option>
-                        <option value="Comfortable with people">Comfortable with people</option>
-                        <option value="Comfortable with dogs">Comfortable with dogs</option>
-                        <option value="Comfortable with people and dogs">Comfortable with both</option>
-                    </select>
-                    <span class="focus-setup"></span>
-                </div>
-
-                <div class="wrap-input validate-input" data-validate="Microchip required">
-                    <span class="label-input">Does your pet have a microchip?: </span>
-                    <select id="petChip" class="setup" name="petChip">
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
-                    </select>
-                    <span class="focus-setup"></span>
-                </div>
-
-                <div class="wrap-input validate-input" data-validate="Vet required">
-                    <span class="label-input">Veterinarian Office Information: </span>
-                    <input id="petVet" class="setup" type="text" name="petVet">
-                    <span class="focus-setup"></span>
-                </div>
-                <form action="/upload" method="POST", enctype="multipart/form-data"></form>
-                <div class="wrap-input validate-input">
-                    <span class="label-input">Profile Picture: </span>
-                    <input id="petImg" class="setup" type="file" name="img" accept="image/*">
-                    <span class="focus-setup"></span>
-                </div>
-                {{!-- Button --}}
-                <div class="container-setup-form-btn">
-                    <div class="wrap-setup-form-btn">
-                        <div class="setup-form-bgbtn"></div>
-                        <button class="setup-form-btn">
-                            Create Profile
-                        </button>
-                    </div>
-                </div>
-            </form>
+        <div class="wrap-input validate-input" data-validate="Pet Name required">
+          <label class="label-input">Pet Name: </label>
+          <input id="petName" class="setup" type="text" placeholder="petName">
         </div>
 
-    </div>
-</div>
+        <div class="wrap-input validate-input" data-validate="Breed required">
+          <label class="label-input">Breed: </label>
+          <input id="petBreed" class="setup" type="text" placeholder="*******">
+        </div>
 
+        <div class="wrap-input validate-input" data-validate="Age required">
+          <label class="label-input">Age: </label>
+          <input id="petAge" class="setup" type="text" placeholder="**">
+        </div>
+
+        <div class="wrap-input validate-input" data-validate="Gender required">
+          <label class="label-input">Gender: </label>
+            <select id="petGender" class="setup">
+                <option value="Boy">Boy</option>
+                <option value="Girl">Girl</option>
+          </select>
+        </div>
+
+        <div class="wrap-input validate-input" data-validate="Fixed required">
+          <label class="label-input">Spayed or Neutered: </label>
+          <select id="petFixed" class="setup">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <div class="wrap-input validate-input" data-validate="Bio required">
+          <label class="label-input">Bio: </label>
+          <textarea id="petBio" class="setup" type="text" placeholder="****************" rows="4" cols="25"></textarea>
+        </div>
+
+        <div class="wrap-input validate-input" data-validate="Energy required">
+          <label class="label-input">Energy Level: </label>
+          <select id="petEnergy" class="setup">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+        </div>
+
+        <div class="wrap-input validate-input" data-validate="Personality required">
+          <label class="label-input">Personality: </label>
+            <select id="petPersonality" class="setup">
+                <option value="Shy">Shy</option>
+                <option value="Comfortable with people">Comfortable with people</option>
+                <option value="Comfortable with dogs">Comfortable with dogs</option>
+                <option value="Comfortable with people and dogs">Comfortable with both</option>
+            </select>
+        </div>
+
+        <div class="wrap-input validate-input" data-validate="Microchip required">
+          <label class="label-input">Does you pet have a microchip?: </label>
+          <select id="petChip" class="setup">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <div class="wrap-input validate-input" data-validate="Veterinarian required">
+          <label class="label-input" for="email-input">Veterinarian Office Information: </label>
+          <input id="petVet" class="setup" type="text" placeholder="Office Information">
+        </div>
+
+         <div class="wrap-input validate-input">
+          <label class="label-input">Profile Picture: </label>
+          <input id="petImg" class="setup" type="file" accept="image/*">
+        </div>
+
+        {{!-- BUTTON --}}
+        <div class="container-setup-form-btn">
+          <div class="wrap-setup-form-btn">                
+            <button class="btn btn-success btn-block" type="submit">Submit</button>
+          </div>
+          <a href="/login" class="login">Have an account? Login Here
+            <i class="fa fa-long-arrow-right m-l-5"></i>
+          </a>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12"></div>
+  </div>
+
+</div>
+<!-- footer -->
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
