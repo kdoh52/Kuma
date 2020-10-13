@@ -64,7 +64,12 @@ module.exports = (app)=>{
   // });
 
   app.get("/dashboard", isAuthenticated, (req, res)=>{
-    res.render("dashboard");
+    connection.query("SELECT * FROM Profiles", function(err, data) {
+      if (err) throw err;
+      console.log({ dogs: data })
+      res.render("dashboard", { dogs: data });
+    })
+    // res.render("dashboard");
   })
 
 };

@@ -47,6 +47,14 @@
         <!-- Lorem Ipsum-->
         <div class="row">
             <div class="col-md-8 offset-md-2">
+                {{#each dogs}}
+                <h2>{{pet_name}}</h2>
+                <p>{{breed}}</p>
+                <p>Age: {{age}}</p>
+                <p>Energy: {{pet_energy}}</p>
+                <p>{{pet_personality}}</p>
+
+                {{/each}}
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae dignissimos maiores perspiciatis sunt. Quaerat autem sint placeat dolorem necessitatibus? Earum, enim corporis. Aut maxime dolores facilis unde quasi sed dolore.</p>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae dignissimos maiores perspiciatis sunt. Quaerat autem sint placeat dolorem necessitatibus? Earum, enim corporis. Aut maxime dolores facilis unde quasi sed dolore.</p>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae dignissimos maiores perspiciatis sunt. Quaerat autem sint placeat dolorem necessitatibus? Earum, enim corporis. Aut maxime dolores facilis unde quasi sed dolore.</p>
