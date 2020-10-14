@@ -1,16 +1,16 @@
 <link rel="stylesheet" href="css/setup.css" type="text/css">
 {{!-- Main Container --}}
-<div class="container-fluid bg"> 
+<div class="container-fluid bg">
   <div class="row">
-    <div class="col-md-4 col-sm-4 col-xs-12"></div>
-    <div class="col-md-4 col-sm-4 col-xs-12">
-        {{!-- FORM --}}
+    {{!-- <div class="col-md-3 col-sm-4 col-xs-12"></div> --}}
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      {{!-- FORM --}}
       <form id="setup-form" class="setup-form validate-form">
-        <h1>Profile Setup</h1> 
+        <h1>Profile Setup</h1>
 
         <div class="wrap-input validate-input" data-validate="Pet Name required">
           <label class="label-input">Pet Name: </label>
-          <input id="petName" class="setup" type="text" placeholder="petName">
+          <input id="petName" class="setup" type="text" placeholder="Name">
         </div>
 
         <div class="wrap-input validate-input" data-validate="Breed required">
@@ -25,9 +25,9 @@
 
         <div class="wrap-input validate-input" data-validate="Gender required">
           <label class="label-input">Gender: </label>
-            <select id="petGender" class="setup">
-                <option value="Boy">Boy</option>
-                <option value="Girl">Girl</option>
+          <select id="petGender" class="setup">
+            <option value="Boy">Boy</option>
+            <option value="Girl">Girl</option>
           </select>
         </div>
 
@@ -47,20 +47,20 @@
         <div class="wrap-input validate-input" data-validate="Energy required">
           <label class="label-input">Energy Level: </label>
           <select id="petEnergy" class="setup">
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
-            </select>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
         </div>
 
         <div class="wrap-input validate-input" data-validate="Personality required">
           <label class="label-input">Personality: </label>
-            <select id="petPersonality" class="setup">
-                <option value="Shy">Shy</option>
-                <option value="Comfortable with people">Comfortable with people</option>
-                <option value="Comfortable with dogs">Comfortable with dogs</option>
-                <option value="Comfortable with people and dogs">Comfortable with both</option>
-            </select>
+          <select id="petPersonality" class="setup">
+            <option value="Shy">Shy</option>
+            <option value="Comfortable with people">Comfortable with people</option>
+            <option value="Comfortable with dogs">Comfortable with dogs</option>
+            <option value="Comfortable with people and dogs">Comfortable with both</option>
+          </select>
         </div>
 
         <div class="wrap-input validate-input" data-validate="Microchip required">
@@ -76,14 +76,15 @@
           <input id="petVet" class="setup" type="text" placeholder="Office Information">
         </div>
 
-         <div class="wrap-input validate-input">
+        <div class="wrap-input validate-input">
           <label class="label-input">Profile Picture: </label>
           <input id="petImg" class="setup" type="file" accept="image/*">
         </div>
 
         {{!-- BUTTON --}}
         <div class="container-setup-form-btn">
-          <div class="wrap-setup-form-btn">                
+          <div class="wrap-setup-form-btn">
+            <div class="signup-form-bgbtn"></div>
             <button class="btn btn-success btn-block" type="submit">Submit</button>
           </div>
           <a href="/login" class="login">Have an account? Login Here
@@ -92,11 +93,12 @@
         </div>
       </form>
     </div>
-    <div class="col-md-4 col-sm-4 col-xs-12"></div>
+    <div class="col-md-6 col-sm-6 col-xs-12"></div>
   </div>
 
 </div>
-<!-- footer -->
+
+{{!-- FOOTER --}}
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
