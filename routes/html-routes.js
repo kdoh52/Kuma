@@ -1,18 +1,20 @@
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+const db = require("../models");
 
-var mysql = require("mysql");
+// var mysql = require("mysql");
+
 // var globalVar = require("../public/js/login");
 // console.log(globalVar.global)
 
-var connection = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: "1234",
-  database: "kuma_db",
-  multipleStatements: true
-});
-connection.connect();
+// var connection = mysql.createConnection({
+//   host: "localhost",
+//   port: 3306,
+//   user: "root",
+//   password: "1234",
+//   database: "kuma_db",
+//   multipleStatements: true
+// });
+// connection.connect();
 
 module.exports = (app)=>{
 
@@ -49,9 +51,23 @@ module.exports = (app)=>{
   // });
 
   app.get("/profile", isAuthenticated, (req, res) => {
-    connection.query("SELECT * FROM Users WHERE id=?; SELECT * FROM Profiles WHERE id=?", [2, 2], function(err, data) {
-      if (err) throw err;
-      res.render("profile", { Users: data[0], Profiles: data[1] });
+    // connection.query("SELECT * FROM Users WHERE id=?; SELECT * FROM Profiles WHERE id=?", [2, 2], function(err, data) {
+    //   if (err) throw err;
+    //   res.render("profile", { Users: data[0], Profiles: data[1] });
+    // })
+
+    db.User.findAll({
+      where: {id: 2}
+    })
+    .then(function(dbUser){
+      db.Profile.findAll({
+        where: {id: 2}
+      })
+      .then(function(dbProfile){
+        console.log("this is", dbUser)
+        console.log("this is", dbProfile)
+        res.render("profile", { Users: dbUser, Profiles: dbProfile })
+      })
     })
   });
 
@@ -64,12 +80,16 @@ module.exports = (app)=>{
   // });
 
   app.get("/dashboard", isAuthenticated, (req, res)=>{
-    connection.query("SELECT * FROM Profiles", function(err, data) {
-      if (err) throw err;
-      console.log({ dogs: data })
-      res.render("dashboard", { dogs: data });
+    // connection.query("SELECT * FROM Profiles", function(err, data) {
+    //   if (err) throw err;
+    //   console.log({ dogs: data })
+    //   res.render("dashboard", { dogs: data });
+    // })
+
+    db.Profile.findAll()
+    .then(function(dbProfile){
+      res.render("dashboard", {dogs: dbProfile})
     })
-    // res.render("dashboard");
   })
 
 };
