@@ -1,18 +1,41 @@
 * {
-  color:rgb(44, 44, 58);
+  color:white;
 }
 
-.bg {
-  background: url('../image/ban.png') no-repeat; width:100%;height:100vh;
+/* html {
+  font-size: 90%;
+  line-height: 1.5;
+  height: 100%;
+} */
+
+body {
+
+  background-image: url('../image/smile.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  position: relative;
+  margin: 0;
+  font-family: sans-serif;
+  min-height: 100%;
+  /* background: linear-gradient(to bottom, #68EACC 0%, #497BE8 100%), no-repeat; */
+  
+}
+
+h1{
+  text-align: center;
+  margin-bottom: 1em;
 }
 
 img {
-  opacity: 0.7;
+  vertical-align: middle;
+  max-width: 100%;
 }
+
 .setup-form {
-  background-color: #ffffff;
+  background-color: black;
   border:1px solid #ffffff;
-  opacity: 0.6;
+  opacity: 0.9;
   padding: 30px 60px;
   margin-top: 20vh;
   -webkit-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
@@ -20,38 +43,63 @@ img {
   box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
 
 }
-.wrap-input{
-  margin: 5%;
-  font-weight: bold;
-  color: #000000;
-}
-
 
 /* BUTTON */
-button {
-	outline: none !important;
-	border: none;
-	background: transparent;
+.btn {
+  border: 0;
+  font-size: 0.75rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding: 0 1.5rem;
+  color: white;
+  background: #0cc6cc;
+  text-transform: uppercase;
+  border-radius: .25rem;
+  letter-spacing: .2em;
+  transition: background .2s;
 }
-
-button:hover {
-	cursor: pointer;
+.btn:hover,
+.btn:focus {
+  background: #A678E2;
 }
-
-iframe {
-	border: none !important;
-}
-
-}
-.container-setup-form-btn {
-
-
-  font-family: sans-serif;
-  font-size: 16px;
-  color: #fff;
-  line-height: 1.2;
-}
-
-.wrap-sign-form-btn:hover .sign-form-bgbtn {
+.wrap-setup-form-btn:hover .setup-form-bgbtn {
   bottom: 0;
 }
+
+/* */
+#petName {
+  color: black;
+}
+#petBreed {
+  color: black;
+}
+#petAge {
+  color: black;
+}
+#petBio {
+  color: black;
+}
+#petVet {
+  color: black;
+}
+
+/* EXTRA IF TIME */
+/* .bg {
+  background: url('../image/smile.png') no-repeat; width:100%;height:100vh;
+  background-size: cover;
+} */
+
+/* .bg:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url('../image/smile.png') center center;
+  opacity: .4;
+}  */ */
+
+
+

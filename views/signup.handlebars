@@ -1,65 +1,55 @@
 <link rel="stylesheet" href="css/signup.css" type="text/css"> 
-
-<div class="limiter">
-    <!-- container-->
-    <div class="container-signup">
-
-        <div class="signup-more" style="background-image: url('image/beach.png');" alt="dog on beach happy"></div>
-
-        <div class="wrap-signup">
-
+{{!-- Main COntainer --}}
+<div class="container-fluid bg">
+    <div class="row">
+        {{!-- <div class="col-md-6 col-sm-4 col-xs-12"></div> --}}
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            {{!-- FORM --}}
             <form id="signup-form" class="signup-form validate-form">
-                <span class="signup-form-title">
-                    Sign Up
-                </span>
-
+                <h1>Sign Up</h1>
 
                 <div class="wrap-input validate-input" data-validate="Valid email is required: ex@abc.xyz">
-
-                    <span class="label-input">Email: </span>
-
-                    <input id="email" class="signup" type="email" name="email">
-
-                    <span class="focus-signup"></span>
+                    <label class="label-input">Email:  </label>
+                    <input id="email" class="signup" type="email" placeholder="Email">
                 </div>
 
                 <div class="wrap-input validate-input" data-validate="Username is required">
-                    <span class="label-input">Username: </span>
-
-                    <input id="username" class="signup" type="text" name="username">
-                    <span class="focus-signup"></span>
+                    <label class="label-input">Username:  </label>
+                    <input id="username" class="signup" type="text" placeholder="Username">
                 </div>
 
                 <div class="wrap-input validate-input" data-validate="Password is required">
-                    <span class="label-input">Password: </span>
-
-                    <input id="password" type="password" class="signup" name="password">
-                    <span class="focus-signup"></span>
+                    <label class="label-input">Password: </label>
+                    <input id="password" type="password" class="signup" placeholder="Password">
+                    
                 </div>
 
                 <div class="wrap-input validate-input" data-validate="Repeat Password is required">
-                    <span class="label-input">Confirm Password: </span>
-                    <input id="password-confirm" type="password" class="signup" type="text" name="repeat-password">
-                    <span class="focus-signup"></span>
+                    <label class="label-input">Confirm Password: </label>
+                    <input id="password-confirm" type="password" class="signup" type="text" placeholder="Confirm Password">
                 </div>
-
+                {{!-- BUTTON --}}       
                 <div class="container-signup-form-btn">
                     <div class="wrap-signup-form-btn">
                         <div class="signup-form-bgbtn"></div>
-                        <button class="signup-form-btn">
-                            create
+                        <button class="signup-form-btn btn btn-success btn-block">
+                        Submit
                         </button>
                     </div>
 
-                    <a href="/login" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
-                        log in
+                    <a href="/login" class="login dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
+                        Login
                         <i class="fa fa-long-arrow-right m-l-5"></i>
                     </a>
                 </div>
             </form>
         </div>
+         <div class="col-md-6 col-sm col-xs-12col-xs-12"><div>
     </div>
 </div>
+
+{{!-- FOOTER --}}
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="signup.js"></script>
 
