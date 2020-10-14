@@ -16,28 +16,28 @@ const db = require("../models");
 // });
 // connection.connect();
 
-module.exports = (app)=>{
+module.exports = (app) => {
 
   app.get("/", (req, res) => {
-    if(req.user) {
+    if (req.user) {
       res.redirect("/profile");
     }
     res.render("login");
   });
 
   app.get("/login", (req, res) => {
-    if(req.user){
+    if (req.user) {
       res.redirect("/profile");
     }
     res.render("login");
   });
 
-  app.get("/signup", (req, res)=>{
+  app.get("/signup", (req, res) => {
     res.render("signup");
   });
 
-  app.get("/profile-setup", (req, res)=>{
-    if(req.user){
+  app.get("/profile-setup", (req, res) => {
+    if (req.user) {
       res.redirect("/profile");
     }
     res.render("profile-setup");
@@ -55,20 +55,21 @@ module.exports = (app)=>{
     //   if (err) throw err;
     //   res.render("profile", { Users: data[0], Profiles: data[1] });
     // })
+    console.log("WE ARE HERE" + db.User.id)
 
     db.User.findAll({
-      where: {id: 2}
+      where: { id: 2 }
     })
-    .then(function(dbUser){
-      db.Profile.findAll({
-        where: {id: 2}
+      .then(function (dbUser) {
+        db.Profile.findAll({
+          where: { id: 2 }
+        })
+          .then(function (dbProfile) {
+            console.log("this is", dbUser)
+            console.log("this is", dbProfile)
+            res.render("profile", { Users: dbUser, Profiles: dbProfile })
+          })
       })
-      .then(function(dbProfile){
-        console.log("this is", dbUser)
-        console.log("this is", dbProfile)
-        res.render("profile", { Users: dbUser, Profiles: dbProfile })
-      })
-    })
   });
 
   // app.get("/profile/:id", isAuthenticated, (req, res) => {
@@ -78,8 +79,23 @@ module.exports = (app)=>{
   //     console.log(req.params.id);
   //   })
   // });
+  app.get("/profile/:id", isAuthenticated, (req, res) => {
+    db.User.findAll({
+      where: { id: req.params.id }
+    })
+      .then(function (dbUser) {
+        db.Profile.findAll({
+          where: { id: req.params.id }
+        })
+          .then(function (dbProfile) {
+            console.log("this is", dbUser)
+            console.log("this is", dbProfile)
+            res.render("profile", { Users: dbUser, Profiles: dbProfile })
+          })
+      })
+  });
 
-  app.get("/dashboard", isAuthenticated, (req, res)=>{
+  app.get("/dashboard", isAuthenticated, (req, res) => {
     // connection.query("SELECT * FROM Profiles", function(err, data) {
     //   if (err) throw err;
     //   console.log({ dogs: data })
@@ -87,9 +103,9 @@ module.exports = (app)=>{
     // })
 
     db.Profile.findAll()
-    .then(function(dbProfile){
-      res.render("dashboard", {dogs: dbProfile})
-    })
+      .then(function (dbProfile) {
+        res.render("dashboard", { dogs: dbProfile })
+      })
   })
 
 };
