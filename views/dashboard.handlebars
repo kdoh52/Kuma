@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="css/dashboard.css" type="text/css">
 <body>
-    <div class="container">
+    <div class="container col-lg-8">
         <!-- Navigation -->
         <div class="row">
             <div class="col-md-8 offset-md-2">
@@ -51,7 +51,7 @@
             <div class="col-md-8 offset-md-2">
                 {{#each dogs}}
                 <div class="dogProfile">
-                    <h2>{{dataValues.pet_name}}</h2>
+                    <h2 class="dogName">{{dataValues.pet_name}}</h2>
                     <p>{{dataValues.breed}}</p>
                     <p>Age: {{dataValues.age}}</p>
                     <p>Energy: {{dataValues.pet_energy}}</p>
@@ -79,7 +79,7 @@
                             Link to our: <a href=>Project Repository</a>
                             <!-- copy right -->
                             <a href="https://jgthms.com"></a>. The source code is licensed
-                            <a href="http://opensource.org/licenses/mit-license.php">Triology</a>. 
+                            <a href="http://opensource.org/licenses/mit-license.php">Trilogy</a>. 
                         </p>
                         <p>
                             Copyright © 2020 All Rights Reserved.
@@ -91,5 +91,5 @@
         </div>
     </div>
 	<!-- Custom Script -->
-	<script src="js/dashboard.js" type="text/javascript"></script>
+	{{!-- <script src="js/dashboard.js" type="text/javascript"></script> --}}
 </body>
