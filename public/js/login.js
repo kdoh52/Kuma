@@ -28,31 +28,11 @@ $(document).ready(() => {
 
     });
 
-    //   function loginUser(getUser) {
-    //       $.post("/api/login", {
-    //         email: getUser.email,
-    //         password: getUser.password
-    //       })
-    //       .then(()=>{
-    //           window.location.replace("/profile");
-    //       })
-    //       .catch((err)=>{
-    //           console.log(err);
-    //       });
-    //   };
-
     let id ;
     function getId() {
         $.get("/api/user_data").then((data) => {
             id = data.id;
             console.log(id);
-
-            // let globalVar = {
-            //     global: id
-            // }
-            // module.exports = { global: id }
-
-
         })
             .then(() => {
                 window.location.replace("/profile/" + id);
