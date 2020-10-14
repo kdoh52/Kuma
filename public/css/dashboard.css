@@ -1,4 +1,4 @@
-.wrappper {
+/* .wrappper {
     display: grid;
     grid-template-columns: 
         1 fr
@@ -13,15 +13,19 @@
 .full-bleed {
     width: 100%;
     grid-column: 1/4;
-}
+} */
 
 .dogProfile {
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 h1 {
     margin-top: 30px;
+}
+
+body {
+    font-size: small;
 }
 
 body, h1, h2 {
@@ -30,4 +34,8 @@ body, h1, h2 {
 
 #headline {
     font-size: small;
+}
+
+.dogName {
+    margin-bottom: 10px;
 }
