@@ -2,11 +2,6 @@
   color:white;
 }
 
-/* html {
-  font-size: 90%;
-  line-height: 1.5;
-  height: 100%;
-} */
 
 body {
 
@@ -15,7 +10,7 @@ body {
   background-repeat: no-repeat;
   position: relative;
   margin: 0;
-  font-family: sans-serif;
+  font-family: Poppins,sans-serif;
   min-height: 100%;
   /* background: linear-gradient(to bottom, #68EACC 0%, #497BE8 100%), no-repeat; */
   
@@ -68,7 +63,7 @@ img {
 .wrap-setup-form-btn:hover .setup-form-bgbtn {
   bottom: 0;
 }
-
+/* Input Area */
 #petName {
   color: black;
 }
@@ -78,11 +73,28 @@ img {
 #petAge {
   color: black;
 }
+#petGender {
+  color: black;
+}
+#petFixed {
+  color: black;
+}
 #petBio {
   color: black;
 }
-
+#petEnergy {
+  color: black;
+}
+#petPersonality {
+  color: black;
+}
+#petChip {
+  color: black;
+}
 #petVet {
+  color: black;
+}
+#petImg {
   color: black;
 }
 

@@ -26,6 +26,8 @@ $(document).ready(() => {
             petName: $("#petName").val().trim(),
             petBreed: $("#petBreed").val().trim(),
             petAge: $("#petAge").val().trim(),
+            petGender: $("#petGender").val().trim(),
+            petFixed: $("#petFixed").val().trim(),
             petBio: $("#petBio").val().trim(),
             petEnergy: $("#petEnergy").val().trim(),
             petPersonality: $("#petPersonality").val().trim(), 
@@ -35,7 +37,18 @@ $(document).ready(() => {
             
         };
 
-        if (!dogProfile.petName || !dogProfile.petBreed || !dogProfile.petAge || !dogProfile.petEnergy || !dogProfile.petPersonality || !dogProfile.petBio || !dogProfile.petChip || !dogProfile.petVet) {
+        if (
+            !dogProfile.petName || 
+            !dogProfile.petBreed || 
+            !dogProfile.petAge || 
+            !dogProfile.petGender ||
+            !dogProfile.petFixed ||
+            !dogProfile.petEnergy || 
+            !dogProfile.petPersonality || 
+            !dogProfile.petBio || 
+            !dogProfile.petChip || 
+            !dogProfile.petVet
+            ) {
             console.log('Not all of the input fields were filled out, start over');
             return;
         }

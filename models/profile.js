@@ -25,6 +25,14 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
+        pet_gender: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        pet_fixed: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         pet_energy: {
             type: DataTypes.STRING,
             allowNull: false

@@ -15,7 +15,7 @@ $(document).ready(() => {
         if (!getUser.email || !getUser.password) {
             return;
         }
-        console.log(getUser)
+        console.log(`getUser: ${JSON.stringify(getUser)}`);
         loginUser(getUser)
     });
 
@@ -28,39 +28,28 @@ $(document).ready(() => {
 
     });
 
-    let id ;
-    function getId() {
-        $.get("/api/user_data").then((data) => {
-            id = data.id;
-            console.log(id);
-        })
-            .then(() => {
-                window.location.replace("/profile/" + id);
-            })
-    }
-
     function loginUser(getUser) {
+        console.log(`firing loginUser with ${JSON.stringify(getUser)}`);
         $.post("/api/login", {
             email: getUser.email,
             password: getUser.password
         })
-            .then(() => {
-                let id = getId()
-                console.log("it is: " + id)
+        .then(data => {
+            console.log(`.... making request to /api/user_data with ${JSON.stringify(data)}`);
 
-                // $.get("/api/profiles/" + id)
-                // .then((data)=> {
-                //     console.log(data)
-                // })
-                // .catch((err)=> {
-                //     console.log(err)
-                // })
-
-                // window.location.replace("/profile");
+            $.get("/api/user_data").then((data) => {
+                console.log(`requesting /api/user_data with: ${JSON.stringify(data)}`);
+                return data.id;
             })
-            .catch((err) => {
-                console.log(err);
-            });
+            .then(id => {
+                console.log(`redirecting user to /profile/${id}`);
+                window.location.replace("/profile/" + id);
+            })
+            
+        })
+        .catch((err) => {
+            console.log(`an error occurred! ${JSON.stringify(err)}`);
+        });
     };
 
     // Toggel Image 

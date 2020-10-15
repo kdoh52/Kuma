@@ -39,6 +39,8 @@ module.exports = (app)=>{
       pet_name: req.body.petName,
       breed: req.body.petBreed,
       age: req.body.petAge,
+      pet_gender: req.body.petGender,
+      pet_fixed: req.body.petFixed,
       pet_energy: req.body.petEnergy,
       pet_personality: req.body.petPersonality,
       micro_chip: req.body.petChip,
