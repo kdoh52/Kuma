@@ -127,6 +127,9 @@
       font-size: 12px;
       margin: 3.5px;
   }
+  .stats:hover{
+    cursor: pointer;
+  }
 
   .dogProfile {
     padding: 35px;

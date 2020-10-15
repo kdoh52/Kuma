@@ -1,0 +1,57 @@
+body{
+    background-image: url('../image/another-dog.jpg');
+    background-size: cover;
+    height: 100%;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.about{
+    margin-top: 200px;
+    text-align:center;
+    font-family: poppins;
+}
+
+.about-color{
+    background-color: rgba(0,0,0,0.8);
+}
+
+.about-text{
+    text-align: center;
+    padding: 50px;
+    padding-left: 125px;
+    padding-right: 125px;
+    font-size: 17px;
+    line-height: 30px;
+}
+a{
+    color: white;
+    text-align: center;
+}
+
+.contact{
+    border: 2px solid white;
+    width: 300px;
+    border-radius: 10px;
+    margin-left: 40%;
+    margin-right: 60%;
+    padding:7px;
+}
+.contact:hover{
+    background-color: #616161;
+}
+
+@media screen and (max-width: 1280px){
+    .about{
+        margin-top: 100px;
+    }
+    .contact{
+        margin-left: 30%;
+        margin-right: 70%; 
+    }
+}

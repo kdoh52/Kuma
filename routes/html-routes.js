@@ -123,4 +123,12 @@ module.exports = (app) => {
       })
   })
 
+  app.get("/about", (req, res)=>{
+    res.render("about");
+  })
+
+  app.get("/contact", (req, res)=>{
+    res.render("contact");
+  })
+
 };
