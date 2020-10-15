@@ -61,10 +61,11 @@ module.exports = (app) => {
     //   res.render("profile", { Users: data[0], Profiles: data[1] });
     // })
     console.log("WE ARE HERE" + db.User.id)
-
+    // HARD CODED TO FIND USER 2 --> req.params.id 
     db.User.findAll({
       where: { id: 2 }
     })
+    // HARD CODED TO FIND PROFILE 2 --> req.params.id 
       .then(function (dbUser) {
         db.Profile.findAll({
           where: { id: 2 }
@@ -97,7 +98,7 @@ module.exports = (app) => {
 
       db.Profile.findAll({
         where: { 
-          id: req.params.id 
+          UserId: req.params.id 
         }
       })
       .then(dbProfile => {
