@@ -20,8 +20,8 @@ $(document).ready(() => {
 
     function signupUser(newUser) {
         $.post("/api/signup", newUser)
-        .then(() => {
-            window.location.replace("/profile-setup");
+        .then((dbUser) => {
+            window.location.replace("/profile-setup?id="+dbUser);
         })
         .catch((err) => {
             console.log(err);
