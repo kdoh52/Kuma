@@ -9,6 +9,7 @@
         </a>
         <div class="links">
             <ul>
+                <li class="profileNav"><a href="#">Profile</a></li>
                 <li><a href="/dashboard">Dashboard</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
@@ -36,9 +37,10 @@
         {{#each dogs}}
         <div class="col">
             <div class="dogProfile">
-                <h1 class="dogName">{{dataValues.pet_name}}</h1>
+                <h1 class="dogName" id={{dataValues.id}}><a>{{dataValues.pet_name}}</a></h1>
                 <div class="stats">{{dataValues.breed}}</div>
                 <div class="stats">Age: {{dataValues.age}}</div>
+                <div class="stats">Gender: {{dataValues.pet_gender}}</div>
                 <div class="stats">Energy: {{dataValues.pet_energy}}</div>
                 <div class="stats">{{dataValues.pet_personality}}</div>
                 <!--<p id="email">Contact: {{Users.[0].dataValues.email}}</p>-->
@@ -48,4 +50,5 @@
     </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/dashboard.js" type="text/javascript"></script> 
