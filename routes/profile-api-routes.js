@@ -45,7 +45,8 @@ module.exports = (app)=>{
       pet_personality: req.body.petPersonality,
       micro_chip: req.body.petChip,
       vet_clinic: req.body.petVet,
-      profile_picture: req.body.petImg
+      profile_picture: req.body.petImg,
+      UserId: req.body.UserId,
     }).then((dbProfile)=>{
       res.json(dbProfile);
     });

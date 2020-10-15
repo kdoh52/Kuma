@@ -6,8 +6,12 @@ $(document).ready(() => {
 
     function createProfile(dogProfile) {
         console.log('Incoming payload passed into createProfile');
-
-        $.post("/api/profiles", dogProfile)
+        // adding new variables
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        
+        // changed POSt 
+        $.post("/api/profiles", {...dogProfile,UserId: urlParams.get('id')})
         .then(() => {
             console.log('Navigating to /profile');
             window.location.replace("/profile");

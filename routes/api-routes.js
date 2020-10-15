@@ -20,8 +20,7 @@ module.exports = (app)=>{
       username: req.body.username,
       password: req.body.password
     }).then((dbUser)=>{
-      console.log('Checking DB for user');
-      res.json(dbUser);
+      res.json(dbUser.id);
       // res.redirect(307, "/api/login");
     }).catch((err)=>{
       console.log(`An error occurred: ${err}`);
