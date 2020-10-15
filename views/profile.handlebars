@@ -12,12 +12,12 @@
                 <li><a href="#">Dashboard</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="#">Logout</a></li>
+                <li><a href="/logout">Logout</a></li>
             </ul>
         </div>
     </nav>
 </div>
-<div>
+<div class="cont">
     <div class="center">
         <div class="pet-avatar">
             <!-- Placeholder Image -->
@@ -27,13 +27,15 @@
             <h1 id="pet-name">{{Profiles.[0].dataValues.pet_name}}</h1>
             <h3 id="breed">Breed: {{Profiles.[0].dataValues.breed}}</h3>
             <h3 id="age">Age: {{Profiles.[0].dataValues.age}}</h3>
+            <h3 id="pet-gender">Gender: {{Profiles.[0].dataValues.pet_gender}}</h3>
+            <h3 id="pet-fixed">Spay/Neuter: {{Profiles.[0].dataValues.pet_fixed}}</h3>
             <h3 id="pet-energy">Energy Level: {{Profiles.[0].dataValues.pet_energy}}</h3>
-            <h3 id="pet-personality">Personality Type: {{Profiles.[0].dataValues.pet_personality}}</h3>
             <h3 id="micro-chip">Tracking Chip: {{Profiles.[0].dataValues.micro_chip}}</h3>
             <h3 id="vet-clinic">Physician: {{Profiles.[0].dataValues.vet_clinic}}</h3>
-            <h3 id="username">Username: {{Users.[0].dataValues.username}}</h3>
-            <h3 id="email">Email: {{Users.[0].dataValues.email}}</h3>
-            <p id="bio"> {{Profiles.[0].dataValues.bio}} Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic est dignissimos ullam, facere sint distinctio at non animi officia placeat nihil rerum quaerat omnis atque nemo obcaecati, voluptates soluta quia.</p>
+            <h3 id="pet-personality">Personality Type: {{Profiles.[0].dataValues.pet_personality}}</h3>
+            <p id="bio"> {{Profiles.[0].dataValues.bio}}</p>
+            <h3 id="username">Owner: {{Users.[0].dataValues.username}}</h3>
+            <h3 id="email">Contact: {{Users.[0].dataValues.email}}</h3>
         </div>
     </div>
 </div>

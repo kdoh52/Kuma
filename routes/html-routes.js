@@ -43,6 +43,11 @@ module.exports = (app) => {
     res.render("profile-setup");
   });
 
+  app.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect('/');
+  });
+
   // app.get("/profile", isAuthenticated, (req, res) => {
   //   connection.query("SELECT * FROM Users WHERE id=?; SELECT * FROM Profiles WHERE id=?", [1, 1], function(err, data) {
   //     if (err) throw err;
@@ -80,19 +85,29 @@ module.exports = (app) => {
   //   })
   // });
   app.get("/profile/:id", isAuthenticated, (req, res) => {
+    console.log('👋 loading /profile/:id');
     db.User.findAll({
-      where: { id: req.params.id }
+      where: { 
+        id: req.params.id 
+      }
     })
-      .then(function (dbUser) {
-        db.Profile.findAll({
-          where: { id: req.params.id }
-        })
-          .then(function (dbProfile) {
-            console.log("this is", dbUser)
-            console.log("this is", dbProfile)
-            res.render("profile", { Users: dbUser, Profiles: dbProfile })
-          })
+    .then(dbUser => {
+      console.log(`👋 dbUser is returned: ${JSON.stringify(dbUser)}`);
+      console.log(`👋👋 req.params: ${JSON.stringify(req.params)}`);
+
+      db.Profile.findAll({
+        where: { 
+          id: req.params.id 
+        }
       })
+      .then(dbProfile => {
+        console.log(`👋 dbProfile is returned: ${JSON.stringify(dbProfile)}`);
+        console.log(`👋👋 dbUser: ${JSON.stringify(dbUser)}`);
+        console.log(`👋👋 dbProfile: ${JSON.stringify(dbProfile)}`);
+        res.render("profile", { Users: dbUser, Profiles: dbProfile })
+      })
+
+    })
   });
 
   app.get("/dashboard", isAuthenticated, (req, res) => {
