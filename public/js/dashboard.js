@@ -26,4 +26,14 @@ $(document).ready(()=>{
         
         // window.location.replace("/profile/" + this.id);
     });
+
+    $(function() {
+        let gender = $(".gender").text();
+        if (gender === "male") {
+            $(".gender").text("male ♂");
+        } else if (gender === "female") {
+            $(".gender").text("female ♀");
+        }
+    })
+    
 });

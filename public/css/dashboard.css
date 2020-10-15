@@ -23,15 +23,22 @@
     height: 60px;
     width:100%;
   }
-  
+
   .title{
+    color: white;
+    /* font-weight: bold; */
+    font-family: poppins;
+    font-size: 3rem;
+    /* padding-bottom: 20px; */
     font-size: 3rem;
     margin: .5rem;
+    margin-left: 20px;
   }
   
   .links ul{
     margin: 0;
     padding: 0;
+    font-family: poppins;
     display: flex;
   }
   
@@ -44,6 +51,7 @@
     color:white;
     padding: 1rem;
     display: block;
+    font-size: larger;
   }
   
   .links li:hover {
@@ -94,6 +102,7 @@
   
     .links li a{
       padding: .5rem 1rem;
+      
     }
   
     .links.active{
@@ -105,6 +114,7 @@
   body{
     background-image: url('../image/dog-with-stick.jpg');
     background-size: cover;
+    height: 100%;
     background-repeat: no-repeat;
     color: white;
   }
@@ -120,7 +130,10 @@
 
   .dogProfile {
     padding: 35px;
-    margin: 60px;
+    margin: 20px;
+    /* margin-right: 10px; */
+    margin: auto;
+    margin-bottom: 20px;
     width: 215px;
     background-color: rgba(0,0,0,0.8);
     height: 215px;
@@ -130,4 +143,12 @@
 
   .cont{
     padding-top: 100px;
+  }
+
+  html {
+    height: 100%;
+  }
+
+  a {
+    font-size: large;
   }

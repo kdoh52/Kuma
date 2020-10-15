@@ -27,6 +27,7 @@
 .title{
   font-size: 3rem;
   margin: .5rem;
+  margin-left: 20px;
 }
 
 .links ul{
@@ -187,5 +188,9 @@ h1{
   
   .content h2{
     font-weight: 400;
+  }
+
+  a {
+    font-size: larger;
   }
 }
