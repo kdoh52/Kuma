@@ -112,6 +112,7 @@ body, html{
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  /* overflow: scroll; */
 }
 
 body{
@@ -156,6 +157,9 @@ h1{
   font-weight: 400;
 }
 
+a {
+  font-size: larger;
+}
 @media screen and (max-width: 1280px){
   .cont{
     padding-top: 100px;
@@ -190,7 +194,4 @@ h1{
     font-weight: 400;
   }
 
-  a {
-    font-size: larger;
-  }
 }
