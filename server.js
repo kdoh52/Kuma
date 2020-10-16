@@ -10,7 +10,6 @@ require("dotenv").config();
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
-const HOST = process.env.PORT;
 const db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
