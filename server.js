@@ -88,27 +88,6 @@ app.post('/upload', (req, res)=>{
   });
 });
 
-if(process.env.JAWSDB_URL){
-  const connection = mysql.createConnection(process.env.JAWSDB_URL);
-  connection.connect((err)=>{
-    if(err)throw err;
-    console.log("connected as id " + connection.threadId);
-  });
-}
-else{
-  const connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "1234",
-    database: "kuma_db"
-  });
-  connection.connect((err)=>{
-    if(err)throw err;
-    console.log("connected as id " + connection.threadId);
-  });
-}
-
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync({force:true}).then(()=>{
   app.listen(PORT, ()=>{
