@@ -21,7 +21,7 @@ This applicatin was a lot of fun, learning, and struggles for this group. We ran
   * Kevin Doh:
     - Though the deadline for this application was tight, I'm very happy with the features that we were able to get working. I've been in the habit of looking at previous code         while creating new applications, but for this one I found out a great deal just by getting my hands dirty with Googling and trying new things. It was a difficult project         to get off the ground but I'd like to revisit it at some point to improve upon and expand its features.
   * David Lindner: 
-    -This project was a lot of fun. I personally had a lot of fun getting to learn and experiment with the CSS framework Materialize. I fell in love with it from the start,         components are so simple looking but really get the job done. Sequelize was the bigest bug I had with this project. I had the hardest ime joining two tables; it took             the team and I several days but we finally got it to work. All in all, it was a great experience and I am excited to see what else can be done with this application in           the future.
+    - This project was a lot of fun. I personally had a lot of fun getting to learn and experiment with the CSS framework Materialize. I fell in love with it from the start,         components are so simple looking but really get the job done. Sequelize was the bigest bug I had with this project. I had the hardest ime joining two tables; it took             the team and I several days but we finally got it to work. All in all, it was a great experience and I am excited to see what else can be done with this application in           the future.
 
 ## License
 
